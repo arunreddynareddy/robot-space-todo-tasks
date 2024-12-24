@@ -10,7 +10,7 @@ const TaskList = ({filterStatus}) => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("https://robot-space-todo-tasks.onrender.com//tasks");
+      const response = await axios.get("https://robot-space-todo-tasks.onrender.com/tasks");
       setTasks(response.data);
     } catch (err) {
       console.error("Error fetching tasks:", err);
@@ -20,7 +20,7 @@ const TaskList = ({filterStatus}) => {
   const deleteTask = async (id) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
-        await axios.delete(`https://robot-space-todo-tasks.onrender.com//tasks/${id}`);
+        await axios.delete(`https://robot-space-todo-tasks.onrender.com/tasks/${id}`);
         fetchTasks();
       } catch (err) {
         console.error("Error deleting task:", err);
